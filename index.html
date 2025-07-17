@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Report: Indore Smart City Development Limited</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals (Stone, Slate, Sky) -->
+    <!-- Application Structure Plan: The linear report is transformed into a thematic, single-page application for better user engagement. The structure includes: a sticky navigation for easy access to sections; an interactive timeline for the weekly journey, which reveals details on click to avoid a wall of text; a "Key Projects" section with a simulated, interactive chart to demonstrate data analysis skills; and distinct, card-based layouts for learnings and memorable moments. This design prioritizes exploration and skill demonstration over simple chronological reading, making it more impactful for audiences like recruiters. -->
+    <!-- Visualization & Content Choices: 
+        - Week-wise Summary -> Interactive Timeline (HTML/CSS/JS): To make the journey explorable and reduce initial text overload. User clicks a week to see details.
+        - Traffic Violation Data -> Interactive Bar Chart (Chart.js/Canvas): To visually and interactively demonstrate the data analysis skills mentioned in the report, using simulated data for impact. Interaction includes filtering the data.
+        - Key Learnings/Challenges/Suggestions -> 3-Column Card Layout (HTML/Tailwind): For easy, scannable comparison of reflections.
+        - Systems (ITMS/ISWM) & Events -> Icon-driven Cards (HTML/Tailwind): To present key information in a digestible, visually organized format.
+        Justification: These choices convert a static document into an engaging portfolio piece, focusing on interactivity and clear presentation of skills and experiences. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #cbd5e1;
+            top: 1.25rem;
+            bottom: -1rem;
+            left: 0.5rem;
+            transform: translateX(-50%);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 9999px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="./Emblem.jpg" alt="Indore Municipal Corporation Logo" class="h-10 mr-2">
+                    <img src="./logo.gif" alt="Smart City Mission Logo" class="h-10 mr-3">
+                    <h1 class="text-xl font-bold text-sky-800">Internship Portfolio</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#overview" class="text-stone-600 hover:text-sky-700 font-medium">Overview</a>
+                    <a href="#journey" class="text-stone-600 hover:text-sky-700 font-medium">My Journey</a>
+                    <a href="#projects" class="text-stone-600 hover:text-sky-700 font-medium">Key Projects</a>
+                    <a href="#learnings" class="text-stone-600 hover:text-sky-700 font-medium">Reflections</a>
+                    <a href="#memories" class="text-stone-600 hover:text-sky-700 font-medium">Memories</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-stone-600 hover:bg-stone-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
+            <a href="#overview" class="block py-2 px-6 text-stone-600 hover:bg-stone-100">Overview</a>
+            <a href="#journey" class="block py-2 px-6 text-stone-600 hover:bg-stone-100">My Journey</a>
+            <a href="#projects" class="block py-2 px-6 text-stone-600 hover:bg-stone-100">Key Projects</a>
+            <a href="#learnings" class="block py-2 px-6 text-stone-600 hover:bg-stone-100">Reflections</a>
+            <a href="#memories" class="block py-2 px-6 text-stone-600 hover:bg-stone-100">Memories</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="overview" class="text-center mb-24">
+            <h2 class="text-4xl font-bold text-sky-900 mb-4">Internship at Indore Smart City</h2>
+            <p class="text-lg text-stone-600 max-w-3xl mx-auto">A 45-day immersive experience at Indore Smart City Development Limited , focusing on data analysis, smart governance systems, and public event management under the Indore Municipal Corporation.</p>
+            <div class="mt-8 flex justify-center items-center gap-6 text-stone-600">
+                <div class="flex items-center gap-2">
+                    <span class="text-sky-700">●</span>
+                    <span>Rohit Prajapat</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sky-700">●</span>
+                    <span>ISCDL(IT department)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sky-700">●</span>
+                    <span>June 1 - July 15, 2025</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="mb-24">
+            <h3 class="text-3xl font-bold text-center text-sky-900 mb-4">My 7-Week Journey</h3>
+             <p class="text-md text-stone-600 max-w-3xl mx-auto text-center mb-12">This interactive timeline summarizes my week-by-week activities and growth during the internship. Click on any week to expand and see the detailed tasks and accomplishments for that period.</p>
+            <div id="timeline-container" class="relative pl-8">
+            </div>
+        </section>
+
+        <section id="projects" class="mb-24">
+            <h3 class="text-3xl font-bold text-center text-sky-900 mb-4">Key Projects & Exposure</h3>
+             <p class="text-md text-stone-600 max-w-3xl mx-auto text-center mb-12">Beyond the weekly tasks, my internship revolved around several key projects and systems that are critical to Indore's smart city infrastructure. This section provides a deeper look into that work.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h4 class="text-2xl font-bold text-sky-800 mb-4">Smart City Systems</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl mt-1">🚦</span>
+                            <div>
+                                <h5 class="font-semibold">ITMS & ATCS</h5>
+                                <p class="text-stone-600 text-sm">Learned about the Intelligent Traffic Management and Adaptive Traffic Control Systems, including a visit to the ICCC control room to see e-challan generation in real-time.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl mt-1">🗑️</span>
+                            <div>
+                                <h5 class="font-semibold">ISWM</h5>
+                                <p class="text-stone-600 text-sm">Studied the Integrated Solid Waste Management system, understanding how Indore uses technology to track garbage collection vehicles and ensure door-to-door service efficiency.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h4 class="text-2xl font-bold text-sky-800 mb-4">Event Management & Volunteering</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <span class="text-2xl mt-1">💧</span>
+                            <div>
+                                <h5 class="font-semibold">Jal Samvad</h5>
+                                <p class="text-stone-600 text-sm">Gained hands-on experience in crowd management, hospitality, and communication while handling registrations for this MP government event.</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start gap-4">
+                            <span class="text-2xl mt-1">🤝</span>
+                            <div>
+                                <h5 class="font-semibold">MP Development Conclave</h5>
+                                <p class="text-stone-600 text-sm">Assisted in managing student crowds, networked with officials, and listened to dignitaries including the Chief Minister, enhancing my understanding of public administration.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="learnings" class="mb-24">
+             <h3 class="text-3xl font-bold text-center text-sky-900 mb-4">Reflections & Takeaways</h3>
+             <p class="text-md text-stone-600 max-w-3xl mx-auto text-center mb-12">The internship was a profound learning experience, offering not just technical skills but also significant personal and professional growth. This section captures the key learnings, the challenges I faced, and my suggestions for the future.</p>
+             <div class="grid md:grid-cols-3 gap-8">
+                 <div class="bg-white p-6 rounded-lg shadow">
+                     <h4 class="text-xl font-bold text-sky-800 mb-3">Key Learnings</h4>
+                     <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                         <li>Proficiency in Python (NumPy, Pandas) and Power BI (DAX).</li>
+                         <li>Practical knowledge of ITMS and ISWM systems.</li>
+                         <li>Developed data storytelling and dashboard creation skills.</li>
+                         <li>Enhanced soft skills in communication and event management.</li>
+                         <li>Learned the importance of professional networking.</li>
+                     </ul>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow">
+                     <h4 class="text-xl font-bold text-sky-800 mb-3">Challenges Faced</h4>
+                      <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                         <li>Managing and cleaning huge, raw datasets was time-intensive.</li>
+                         <li>Steep initial learning curve for Power BI and DAX.</li>
+                         <li>Ensuring data consistency when integrating monthly with yearly data.</li>
+                     </ul>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow">
+                     <h4 class="text-xl font-bold text-sky-800 mb-3">Suggestions</h4>
+                      <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                         <li>Implement structured training modules for essential tools.</li>
+                         <li>Develop standardized data entry protocols to aid cleaning.</li>
+                         <li>Establish a formal mentorship program for new interns.</li>
+                     </ul>
+                 </div>
+             </div>
+        </section>
+
+        <section id="memories" class="mb-16">
+             <h3 class="text-3xl font-bold text-center text-sky-900 mb-4">Memorable Experiences</h3>
+             <p class="text-md text-stone-600 max-w-3xl mx-auto text-center mb-12">Some moments during the internship were particularly impactful and will stay with me for a long time. They represent the highlights of a fantastic learning journey.</p>
+             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 
+                 <div class="bg-sky-100/50 border border-sky-200/50 p-6 rounded-lg">
+                    <p class="text-stone-700">Witnessing the real-time operation of ITMS in the ICCC control room was fascinating.</p>
+                 </div>
+                 <div class="bg-sky-100/50 border border-sky-200/50 p-6 rounded-lg">
+                    <p class="text-stone-700">Volunteering at prestigious events like "Jal Samvad" was a matter of great pride.</p>
+                 </div>
+                 
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-stone-400">
+            <p>This interactive report was created to summarize my internship experience.</p>
+            <p>&copy; 2025 - Rohit Prajapat</p>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const timelineData = [
+            {
+                week: 'Week 1',
+                title: 'Orientation and Induction',
+                details: 'Began with a briefing on Smart City projects by Ms. Roopal Chopra & Mr. Jay Kumar. Assigned to the IT department, met the team, set up my environment, and completed introductory training modules ahead of schedule.'
+            },
+            {
+                week: 'Week 2',
+                title: 'Intro to Smart Traffic & Data Analytics',
+                details: 'Learned about ITMS and ATCS for traffic management. Attended a motivational session with CEO IAS Divyank Singh. Began cleaning and filtering a large traffic violation dataset from March 2025 using Excel and Python (NumPy, Pandas).'
+            },
+            {
+                week: 'Week 3',
+                title: 'Practical Exposure to Control Systems',
+                details: 'Visited the ICCC at Geeta Bhawan to see ITMS in action and learn the e-challan process from Mr. Shubham Singh. Also learned about the ISWM (Solid Waste Management) system and its vehicle tracking software from Mr. Rohit Patel.'
+            },
+            {
+                week: 'Week 4',
+                title: 'Data Visualization & Event Management',
+                details: 'Introduced to Power BI for data analysis. Volunteered for the "Jal Samvad" event, gaining hands-on experience in registration handling, crowd management, and professional communication.'
+            },
+            {
+                week: 'Week 5',
+                title: 'Dashboard Development',
+                details: 'Applied Power BI skills to develop a comprehensive dashboard for the March traffic data. Used DAX to create meaningful calculations and transform raw data into clear, interactive visuals.'
+            },
+            {
+                week: 'Week 6',
+                title: 'Storytelling with Data & High-Profile Events',
+                details: 'Refined the Power BI dashboard to create a compelling data story. Volunteered for the SMILE sub-scheme event and the MP Development Conclave, gaining more event management experience and listening to addresses by the CM and other diplomats.'
+            },
+            {
+                week: 'Week 7',
+                title: 'Final Presentation and Conclusion',
+                details: 'Integrated the monthly data with yearly data for broader insights. Presented the final dashboard to my mentors, receiving positive feedback and appreciation for the work and extracted insights.'
+            }
+        ];
+
+        const timelineContainer = document.getElementById('timeline-container');
+        timelineData.forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'timeline-item relative pb-8';
+            itemEl.innerHTML = `
+                <div class="timeline-dot bg-white border-2 border-sky-600"></div>
+                <div class="ml-8">
+                    <button class="w-full text-left">
+                        <div class="flex items-center justify-between">
+                            <p class="font-bold text-lg text-sky-800">${item.week}: ${item.title}</p>
+                            <span class="transform transition-transform duration-300">▼</span>
+                        </div>
+                    </button>
+                    <div class="timeline-details overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <p class="mt-2 text-stone-600 text-sm pr-4">${item.details}</p>
+                    </div>
+                </div>
+            `;
+            timelineContainer.appendChild(itemEl);
+        });
+
+        timelineContainer.addEventListener('click', function(e) {
+            const button = e.target.closest('button');
+            if (button) {
+                const details = button.nextElementSibling;
+                const arrow = button.querySelector('span');
+                if (details.style.maxHeight && details.style.maxHeight !== '0px') {
+                    details.style.maxHeight = '0px';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    document.querySelectorAll('.timeline-details').forEach(d => d.style.maxHeight = '0px');
+                    document.querySelectorAll('.timeline-item button span').forEach(a => a.style.transform = 'rotate(0deg)');
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -50,6 +50,9 @@ JavaScript – Interactivity
 
 GitHub Pages – Hosting
 
+<hr> 
+
+
  ### Internship Work Summary 📊
 
 During my internship at IMC, I worked on:
@@ -67,8 +70,9 @@ Presenting findings to stakeholders
 This website documents the complete workflow and outcomes of the internship.
 
 
-📷 Screenshots
-Screenshot 2026-02-25 144118.png
+📷 Screenshots of POWER BI dashboard
+
+![Power BI Dashboard](Screenshot%202026-02-25%20144118.png) 
 
 <hr>
 
@@ -89,8 +93,8 @@ Screenshot 2026-02-25 144118.png
 
 👨‍💻 Author
 
-Rohit Prajapat
-B.Tech – Mathematics & Computing
+Rohit Prajapat <br>
+B.Tech – Mathematics & Computing <br>
 SVNIT,Surat
 
 GitHub: https://github.com/rohitp9755

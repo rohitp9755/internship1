@@ -2,7 +2,7 @@
  <h1> IMC Internship Report Website</h1>
 
 🔗 Live Website:
-👉 https://rohitp9755.github.io/internship1/
+👉 http://internship2-opal.vercel.app
 
 ## Overview
 

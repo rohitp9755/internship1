@@ -68,11 +68,11 @@ This website documents the complete workflow and outcomes of the internship.
 
 
 📷 Screenshots
+Screenshot 2026-02-25 144118.png
 
-(You can add screenshots here using markdown like this)
+<hr>
 
-![Homepage](images/homepage.png)
-📈 What I Learned
+### What I Learned
 
 + Real-world data handling
 
@@ -84,6 +84,9 @@ This website documents the complete workflow and outcomes of the internship.
 
 + Deploying static websites
 
+
+<hr> 
+
 👨‍💻 Author
 
 Rohit Prajapat
@@ -91,6 +94,7 @@ B.Tech – Mathematics & Computing
 SVNIT,Surat
 
 GitHub: https://github.com/rohitp9755
+
 
 📬 Feedback
 
